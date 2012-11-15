@@ -9,7 +9,7 @@ insert(Key,Value) ->
       sc_event:replace(Key, Value);
 		{error, _} ->
 			{ok, Pid} = sc_element:create(Value),
-			sc_store:insert(key, Pid),
+			sc_store:insert(Key, Pid),
       sc_event:create(Key, Value)
 	end.
 
